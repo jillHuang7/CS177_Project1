@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+ <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+ <property name="triggers">
+  <list>
+   <ref bean="notificationCronTrigger" />
+  </list>
+ </property>
+ </bean>
+ <bean id="notificationCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+  <property name="jobDetail" ref="NotificationJob" />
+  <!-- run every morning at 6 AM -->
+  <property name="cronExpression" value="0/5 * * * * ?" />
+ </bean>
+  
+ <bean name="notificationJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+  <property name="jobClass" value="com.sivalabs.reminders.NotificationJob" />
+  <property name="jobDataAsMap">
+   <map>
+    <entry key="emailService" value-ref="emailService"></entry>
+   </map>
+  </property>
+ </bean>
+   
+ <bean id="emailService" class="com.sivalabs.reminders.EmailService">
+  <property name="mailSender" ref="mailSender"></property>
+ </bean>
+   
+ <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+  <property name="defaultEncoding" value="UTF-8"/>
+  <property name="host" value="smtp.gmail.com" />
+  <property name="port" value="465" />
+  <property name="protocol" value="smtps" />
+  <property name="username" value="polinabochk@gmail.com"/>
+  <property name="password" value="Kubina20_10"/>
+  <property name="javaMailProperties">
+   <props>
+    <prop key="mail.smtps.auth">true</prop>
+    <prop key="mail.smtps.starttls.enable">true</prop>
+    <prop key="mail.smtps.debug">true</prop>
+   </props>
+  </property>
+ </bean>
+</beans>

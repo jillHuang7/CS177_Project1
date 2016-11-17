@@ -1,0 +1,20 @@
+<header role="banner">
+<nav role="navigation" class="navbar container">
+	<div class="navbar-header">
+	  <a class="navbar-brand" href="/about"><img width="35" height="35" class="img" src="<c:url value="/resources/images/leaf.png" />"></a>
+      
+    </div>
+    <div class="navbar-collapse">
+    	 <ul class="nav navbar-nav">
+    	 	 <li><a href="/">KeepItFresh</a></li>
+             <li><a href="/">Home</a></li>
+             <li><a href="/list-settings">Settings</a></li>
+             <li><a href="/search">Search</a></li>
+             <li><a href="/about">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav" id="logout">
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+</header>
