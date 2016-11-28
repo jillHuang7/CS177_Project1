@@ -1,7 +1,5 @@
-a {
-    color: #dadada;
-}
 
+/*
 .navbar-brand {
     float: left;
     padding: 15px 10px;
@@ -27,13 +25,48 @@ header{
 }
 body {
 	background-color:#edeff0;
-	}
-
+}
 
 #logout{
 	margin-left:460px;
 	
-} 
+} */
+body {
+	background-color:#edeff0;
+}
+
+header[role="banner"] {
+	
+	font-size: 18px;
+	font-family: Verdana,sans-serif;
+}
+
+nav[role="navigation"] {
+	background-color: #525f69;
+}
+
+.navbar-collapse {
+	height: 60px;
+	background-color: #525f69
+}
+
+#navlist a {
+	color: #e4e4e4;
+}
+
+a#logo {
+	padding: 10px 10px;
+}
+
+a#title {
+	font-size: 18px;
+	color: #e4e4e4;
+}
+
+ul#logout {
+	margin-right: 20px;
+}
+
 #itemsTable {
 	margin-top: 20px;
 	margin-bottom: 0;
@@ -42,6 +75,7 @@ body {
 #itemsTable > thead th {
 	border-top: 1px solid #ddd;
 	border-left: 1px solid #ddd;
+	
 }
 
 #itemsTable td {
@@ -63,6 +97,40 @@ body {
 	background-color:#edeff0
 }
 
+#itemsTable_wrapper {
+	margin-bottom: 20px;
+}
+
+#itemsTable_filter {
+	display: none;
+}
+
+#itemsTable_paginate {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#settings > table > thead th:last-child, #settings > table > tbody td:last-child {
+	background-color:#edeff0;
+	border-width: 0;
+}
+
 .spacer {
 	margin-top: 40px;
+}
+
+.mini-spacer {
+	margin-top: 20px;
+}
+
+div#search-container {
+	padding: 0;
+}
+
+#itemsTable > tbody > tr > td.dataTables_empty {
+	border-left: 0;
+}
+
+#itemsTable > tfoot > tr > th {
+	border-width: 0;
 }
